@@ -1,0 +1,5 @@
+Bundle-Name: test3-integracion-tema-liferay
+Bundle-SymbolicName: test3.integracion.tema.liferay
+Bundle-Version: 1.0.0
+Export-Package: test3.integracion.tema.liferay.constants
+Web-ContextPath: /test3-integracion-tema-liferay
