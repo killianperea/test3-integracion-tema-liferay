@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {ConfirmDialogModule} from 'primeng-wl/confirmdialog';
 import {ConfirmationService} from 'primeng-wl/api';
-//import {Message} from 'primeng-wl/components/common/api';
 
  
 @Component({
@@ -12,7 +11,6 @@ import {ConfirmationService} from 'primeng-wl/api';
 export class AppComponent {
 
 	caption = 'hola mutual!';
-	//msgs: Message[] = [];
 	images: any[];
 	display_dialog: boolean = false;
 	display_sidebar: boolean = false;

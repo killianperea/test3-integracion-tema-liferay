@@ -15,7 +15,6 @@ import { SplitButtonModule } from 'primeng-wl/splitbutton';
 import { ButtonModule } from 'primeng-wl/button';
 import { RouterModule } from '@angular/router';
 import {ConfirmDialogModule} from 'primeng-wl/confirmdialog';
-//import {ConfirmationService} from 'primeng-wl/api';
 import { LightboxModule } from 'primeng-wl/lightbox';
 import { OverlayPanelModule } from 'primeng-wl/overlaypanel';
 import { DialogModule } from 'primeng-wl/dialog';
@@ -32,7 +31,6 @@ import { TooltipModule } from 'primeng-wl/tooltip';
 		TooltipModule,
 		DialogModule,
 		SidebarModule,
-		//ConfirmationService,
 		ConfirmDialogModule,	
 		OverlayPanelModule,
 		FormsModule,
@@ -49,23 +47,9 @@ import { TooltipModule } from 'primeng-wl/tooltip';
 		BrowserAnimationsModule
 	],
 	declarations: [AppComponent],
-	//providers: [ConfirmationService],
 	entryComponents: [AppComponent],
-	bootstrap: [ ]// Don't bootstrap any component statically (see ngDoBootstrap() below)
+	bootstrap: [ ]
 })
 export class AppModule {
-	// Avoid bootstraping any component statically because we need to attach to
-	// the portlet's DOM, which is different for each portlet instance and,
-	// thus, cannot be determined until the page is rendered (during runtime).
 	ngDoBootstrap() { }
-    /*
-	constructor(private confirmationService: ConfirmationService) {}
-
-	confirm() {
-        this.confirmationService.confirm({
-            message: 'Are you sure that you want to perform this action?',
-            accept: () => {
-            }
-        });
-    }*/
 }
