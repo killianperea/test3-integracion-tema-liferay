@@ -7,21 +7,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-define(["require", "exports", "@angular/core"], function (require, exports, core_1) {
+define(["require", "exports", "@angular/core", "primeng-wl/api"], function (require, exports, core_1, api_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    //import {Message} from 'primeng-wl/components/common/api';
     var AppComponent = (function () {
-        function AppComponent() {
+        function AppComponent(confirmationService) {
+            this.confirmationService = confirmationService;
             this.caption = 'hola mutual!';
+            this.display_dialog = false;
+            this.display_sidebar = false;
+            this.images = [];
+            this.images.push({ source: 'https://misanimales.com/wp-content/uploads/2016/10/crecen-los-gatos.jpg', thumbnail: "https://t1.ea.ltmcdn.com/es/images/5/4/7/img_por_que_mi_gato_no_se_deja_tocar_22745_paso_0_600.jpg", title: 'Sopranos 1' });
+            this.images.push({ source: 'https://misanimales.com/wp-content/uploads/2016/10/crecen-los-gatos.jpg', thumbnail: "https://t1.ea.ltmcdn.com/es/images/5/4/7/img_por_que_mi_gato_no_se_deja_tocar_22745_paso_0_600.jpg", title: 'Sopranos 2' });
+            this.images.push({ source: 'https://misanimales.com/wp-content/uploads/2016/10/crecen-los-gatos.jpg', thumbnail: "https://t1.ea.ltmcdn.com/es/images/5/4/7/img_por_que_mi_gato_no_se_deja_tocar_22745_paso_0_600.jpg", title: 'Sopranos 3' });
+            this.images.push({ source: 'https://misanimales.com/wp-content/uploads/2016/10/crecen-los-gatos.jpg', thumbnail: "https://t1.ea.ltmcdn.com/es/images/5/4/7/img_por_que_mi_gato_no_se_deja_tocar_22745_paso_0_600.jpg", title: 'Sopranos 4' });
         }
+        AppComponent.prototype.showDialog = function () {
+            this.display_dialog = true;
+        };
+        AppComponent.prototype.confirm = function () {
+            this.confirmationService.confirm({
+                message: 'Are you sure that you want to perform this action?',
+                header: 'Confirmation',
+                icon: 'fa-question-circle',
+                accept: function () {
+                },
+                reject: function () {
+                }
+            });
+        };
         return AppComponent;
     }());
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
-            templateUrl: '/o/test3-integracion-tema-liferay/js/app/app.html'
+            templateUrl: '/o/test3-integracion-tema-liferay/js/app/app.html',
+            providers: [api_1.ConfirmationService]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [api_1.ConfirmationService])
     ], AppComponent);
     exports.AppComponent = AppComponent;
 });
